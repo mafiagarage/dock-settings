@@ -18,8 +18,8 @@ const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
 const Convenience = Me.imports.convenience;
 
-const DashToDockUUID = 'dash-to-dock@micxgx.gmail.com';
-const DashToDockExtension = ExtensionUtils.extensions[DashToDockUUID];
+const UbuntuDockUUID = 'ubuntu-dock@ubuntu.com';
+const UbuntuDockExtension = ExtensionUtils.extensions[UbuntuDockUUID];
 
 const SCALE_UPDATE_TIMEOUT = 500;
 const DEFAULT_ICONS_SIZES = [ 128, 96, 64, 48, 32, 24, 16 ];
@@ -78,8 +78,8 @@ const Settings = new Lang.Class({
         this._rtl = (Gtk.Widget.get_default_direction() == Gtk.TextDirection.RTL);
 
         this._builder = new Gtk.Builder();
-        this._builder.set_translation_domain(DashToDockExtension.metadata['gettext-domain']);
-        this._builder.add_from_file(DashToDockExtension.path + '/Settings.ui');
+        this._builder.set_translation_domain(UbuntuDockExtension.metadata['gettext-domain']);
+        this._builder.add_from_file(UbuntuDockExtension.path + '/Settings.ui');
 
         this.widget = this._builder.get_object('settings_notebook');
 
@@ -596,7 +596,7 @@ const Settings = new Lang.Class({
 
         // About Panel
 
-        this._builder.get_object('extension_version').set_label(DashToDockExtension.metadata.version.toString());
+        this._builder.get_object('extension_version').set_label(UbuntuDockExtension.metadata.version.toString());
     },
 
     /**

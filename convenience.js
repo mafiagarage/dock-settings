@@ -18,8 +18,8 @@ const ExtensionUtils = imports.misc.extensionUtils;
  * metadata['settings-schema'].
  */
 function getSettings(schema) {
-    let DashToDock_UUID = 'dash-to-dock@micxgx.gmail.com';
-    let extension = ExtensionUtils.extensions[DashToDock_UUID];
+    let UbuntuDock_UUID = 'ubuntu-dock@ubuntu.com';
+    let extension = ExtensionUtils.extensions[UbuntuDock_UUID];
 
     schema = schema || extension.metadata['settings-schema'];
 
