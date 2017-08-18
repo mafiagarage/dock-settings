@@ -73,6 +73,16 @@ const Settings = new Lang.Class({
     Name: 'DashToDock.Settings',
 
     _init: function() {
+
+        // This extension only works if the Ubuntu Dock is present
+        if (!UbuntuDockExtension) {
+            this._builder = new Gtk.Builder();
+            this._builder.add_from_file(Me.path + '/fallbackSettings.ui');
+
+            this.widget = this._builder.get_object('fallback');
+            return;
+        }
+
         this._settings = Convenience.getSettings('org.gnome.shell.extensions.dash-to-dock');
 
         this._rtl = (Gtk.Widget.get_default_direction() == Gtk.TextDirection.RTL);

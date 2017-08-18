@@ -1,7 +1,7 @@
 # Basic Makefile
 
 UUID = dock-settings@lagrangian.gmail.com
-BASE_MODULES = extension.js metadata.json convenience.js prefs.js
+BASE_MODULES = extension.js metadata.json convenience.js prefs.js fallbackSettings.ui
 ifeq ($(strip $(DESTDIR)),)
 	INSTALLBASE = $(HOME)/.local/share/gnome-shell/extensions
 else
